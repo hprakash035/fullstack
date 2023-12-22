@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml">
+        <edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="ZSALES_CONTRACT_CDSSampleService" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <EntityContainer Name="EntityContainer">
+                <EntitySet Name="ZSales_Contract" EntityType="ZSALES_CONTRACT_CDSSampleService.ZSales_Contract"/>
+            </EntityContainer>
+            <EntityType Name="ZSales_Contract">
+                <Key>
+                    <PropertyRef Name="Sales_Document"/>
+                </Key>
+                <Property Name="Sales_Document" Type="Edm.String" MaxLength="10" Nullable="false"/>
+                <Property Name="Doc_Type" Type="Edm.String" MaxLength="4"/>
+                <Property Name="Sold_to_Party" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Ship_to_Party" Type="Edm.String" MaxLength="10"/>
+                <Property Name="Valid_as" Type="Edm.Date"/>
+                <Property Name="Valid_to" Type="Edm.Date"/>
+                <Property Name="Sales_Org" Type="Edm.String" MaxLength="4"/>
+                <Property Name="Distribution_Channel" Type="Edm.String" MaxLength="2"/>
+                <Property Name="Division" Type="Edm.String" MaxLength="2"/>
+                <Property Name="Material" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Target_Quantity" Type="Edm.Decimal" Scale="3" Precision="13"/>
+                <Property Name="UOM" Type="Edm.String" MaxLength="3"/>
+                <Property Name="Item_Description" Type="Edm.String" MaxLength="40"/>
+                <Property Name="Plant" Type="Edm.String" MaxLength="4"/>
+            </EntityType>
+            <Annotations Target="ZSALES_CONTRACT_CDSSampleService.EntityContainer/ZSales_Contract">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,16 @@
+{
+    "welcomeFile": "index.html",
+    "authenticationMethod": "route",
+    "routes": [
+      {
+        "source": "^/odata/v4/zsales-contract-cds/",
+        "destination": "srv_api"
+      },
+      {
+        "source": "(.*)",
+        "target": "/project1/$1",
+        "service": "html5-apps-repo-rt",
+        "authenticationType": "none" 
+      }    
+    ]
+}

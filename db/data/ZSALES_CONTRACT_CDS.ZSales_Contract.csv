@@ -1,0 +1,2 @@
+Sales_Document,Doc_Type,Sold_to_Party,Ship_to_Party,Valid_as,Valid_to,Sales_Org,Distribution_Channel,Division,Material,Target_Quantity,UOM,Item_Description,Plant
+1,ZRET,EXXONMOBIL,EXXONMOBIL,,,GSO1,G1,G1,HSD01,0.000,L,HIgh Speed Diesel,GP03
